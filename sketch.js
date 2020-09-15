@@ -6,6 +6,8 @@ var obstaclesGroup, obstacle1, obstacle2, obstacle3, obstacle4, obstacle5, obsta
 
 var score;
 
+var jumpsound;
+
 
 function preload(){
   trex_running = loadAnimation("trex1.png","trex3.png","trex4.png");
@@ -21,6 +23,7 @@ function preload(){
   obstacle4 = loadImage("obstacle4.png");
   obstacle5 = loadImage("obstacle5.png");
   obstacle6 = loadImage("obstacle6.png");
+  jumpsound=loadSound("jump.mp3");
 }
 
 function setup() {
@@ -52,6 +55,7 @@ function draw() {
   
   if(keyDown("space")) {
     trex.velocityY = -10;
+ jumpsound.play();
   }
   
   trex.velocityY = trex.velocityY + 0.8
